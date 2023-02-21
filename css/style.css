@@ -27,27 +27,25 @@
     box-sizing: border-box;
 }
 
-body {
-    font-size: 16px;
-    font-family:"TT Lakes" , sans-serif;
-    height: 100%;
-    position: absolute;
-}
-
-.wrapper {
-    width: 320px;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+aside {
+    max-width: 320px;
+    min-height: 100vh;
     position: relative;
     background-color: #ffffff;
     box-shadow: 16px 0 52px 0 rgba(14, 24, 80, 0.2),
       -2px 0 4px 0 rgba(69, 79, 126, 0.02);
     top: 0;
     left: 0;
+    font-size: 16px;
+    font-family:"TT Lakes" , sans-serif;
 }
-
+.inner-container {
+    min-height: 100vh;
+    padding:23px 24px ;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
 .header__buttons {
     width: 40px;
     height: 40px;
@@ -58,19 +56,16 @@ body {
 .header__container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 23px 24px;
-}
-.header__left-side  {
-    display: flex;
-    margin-right: auto;
-}
-.header__close {
-    margin-right: 16.5px;
+    padding-bottom: 25px ;
 }
 
 .header__close {
+    margin-right: 16.5px;
     background:url(../assets/img/burger.svg) no-repeat;
+}
+
+.header__logo {
+    margin-right: 78.73px;
 }
 
 .header__search {
@@ -78,30 +73,32 @@ body {
 }
 nav {
     position: relative;
+    font-weight: 500;
+    padding: 25px 0;
 }
-.menu__list ul {
+.menu ul {
     position: relative;
 }
-.menu{
-    padding: 23px 24px;
-    font-weight: 500;
-}
-.menu__item {
+
+.menu__item li,
+.menu__item-activ li {
     margin-bottom: 32px;
+    cursor: pointer;
 }
 
-.menu__item a {
+.menu__item li {
     color: #1B1C21;
 }
 
-.menu__item-activ a {
+.menu__item-activ li {
     color:#7E7E82;
 }
-.menu__item {
+.menu__item,
+.menu__item-activ {
     position: relative;
 }
 
-.menu__item-activ::before{
+.menu__item-activ:before{
     content:"";
     position:absolute;
     background-color:#41F6D7;
@@ -112,7 +109,7 @@ nav {
     top:-5px;
     z-index: 5;
 }
-.menu__item-hover:before{
+.menu__item:before{
     content:"";
     position:absolute;
     background-color:transparent;
@@ -123,19 +120,19 @@ nav {
     top:-5px;
     z-index: 5;
 }
-.menu__item-hover:hover::before{
+.menu__item:hover::before{
     background-color: rgb(252, 149, 149);
     transition: background-color 0.6s;
 }
 
-.menu__item-hover a:hover{
+.menu__item li:hover{
     color:rgb(255, 87, 87);
     transition: color 0.6s;
 }
-
-.footer__container {
-    padding: 32px 24px;
+.footer {
+    margin-top: auto;
 }
+
 .footer__buttons{
     display: flex;
     margin-right: auto;
@@ -150,13 +147,19 @@ nav {
 .footer__button-profie {
     background: url(../assets/img/profile.svg) no-repeat;
 }
-.footer__mail{
+.email {
     margin-bottom: 12px;
+    color: #1B1C21;
+    margin-bottom: 12px;
+    display: block;
 }
-.footer__number {
-    margin-bottom: 20px;
+.number {
+    margin-bottom: 7px;
     font-weight: bold;
     font-size: 24px;
+    color: #1B1C21;
+    display: block;
+    margin-bottom: 40px;
 }
 .footer__button {
     width: 40px;
@@ -167,24 +170,23 @@ nav {
     cursor: pointer;
 }
 
-.footer__languages ul {
+.footer__languages  {
     display: flex;
     flex-direction: row;
     margin-right: auto;
     font-weight: 500;
 }
 
-.footer__languages li {
-    margin-right: 7px;
-}
-.footer__link a:hover {
-    color:rgb(255, 87, 87);
-    transition: color 0.6s;
+.footer__languages input {
+    display: none;
 }
 
-.footer__link a{
+.footer__languages label {
+    margin-right: 7px;
+    cursor: pointer;
     color:#1B1C21;
 }
-.footer__item-active a{
-    color: #7E7E82;
+.footer__languages label:hover {
+    color:rgb(255, 87, 87);
+    transition: color 0.6s;
 }
